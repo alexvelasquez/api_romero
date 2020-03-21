@@ -22,7 +22,7 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * User
  *
- * @ORM\Table(name="user");
+ * @ORM\Table(name="`user`");
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository");
  * @ORM\HasLifecycleCallbacks()
  */
@@ -81,9 +81,7 @@ class User implements UserInterface
     protected $updatedAt;
 
 
-    public function __construct()
-    {
-        $this->boards = new ArrayCollection();
+    public function __construct(){
     }
 
     /**

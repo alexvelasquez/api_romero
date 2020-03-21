@@ -21,7 +21,7 @@ security:
                 require_previous_session: false
 
         api:
-            pattern:   ^/api
+            pattern:   ^/api/player
             anonymous: false
             provider: api_user_provider
             guard:
@@ -33,4 +33,4 @@ security:
         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/doc, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/player,       roles: IS_AUTHENTICATED_FULLY }
