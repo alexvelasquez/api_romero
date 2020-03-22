@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Romerense{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+        {% block body %}
+        <div style="text-align: center;margin-top: 5%;">
+            <img src="logo.png" alt="Smiley face" height="250" width="250">
+            <h3 style="font-family: 'Patua One', cursive;font-size: 180%;">API REST DE ROMERENSE</h3>
+            <h5>Ver la documentación <a href="{{doc_path}}">aqui</a></h5>
+        </div>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
