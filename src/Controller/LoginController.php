@@ -96,12 +96,4 @@ class LoginController extends FOSRestController
         return new Response($serializer->serialize($response, "json"));
     }
 
-    /**
-     * @Route("/v1/", name="api")
-     */
-    public function api()
-    {
-        return new Response(sprintf('Logged in as %s', $this->getUser()->getUsername()));
-    }
-
 }
