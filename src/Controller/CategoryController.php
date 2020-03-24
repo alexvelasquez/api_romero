@@ -80,7 +80,7 @@ class CategoryController extends FOSRestController
            $description = $request->request->get("description",null);
 
            if (!is_null($description) ) {
-               $category = new Category(strtoupper($description));
+               $category = new Category(ucfirst(strtolower($description)));
                $em->persist($category);
                $em->flush();
 
@@ -101,36 +101,6 @@ class CategoryController extends FOSRestController
         return new Response($serializer->serialize($response, "json"));
     }
 
-    /**
-     * @Rest\Get("/category/{categoryId}", name="player_for_category", defaults={"_format":"json"})
-     * @SWG\Response(response=200,description="Devuelve todos los jugadores por categorias.")
-     * @SWG\Response(response=400,description="Hubo un problema para recuperar los jugadores")
-     * @SWG\Tag(name="Player")
-     */
-    public function getPlayersForCategories($categoryId) {
-        $serializer = $this->get('jms_serializer');
-        $em = $this->getDoctrine()->getManager();
-        $players = [];
-        try {
-            $code = 200;
-            $category =  !is_null($categoryId) ? $em->getRepository("App:Category")->find($categoryId) : null;
-            if (is_null($category)) {
-                $code = 500;
-                $message = "Debe ingresar una categoria";
-            }
-            else{
-                $players = $em->getRepository("App:Player")->findBy(['category'=>$category]);
-            }
-        } catch (Exception $ex) {
-            $code = 500;
-            $message = "Error al recuperar los jugadores - Error: {$ex->getMessage()}";
-        }
-        $response = [
-            'code' => $code,
-            'data' => $code == 200 ? $players : $message,
-        ];
-        return new Response($serializer->serialize($response, "json"));
-    }
 
     
 

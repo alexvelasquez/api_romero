@@ -69,7 +69,7 @@ class Player
 
 
 
-    public function __construct(String $name, String $lastName, $birthDate, String $dni,string $phone, Category $category)
+    public function __construct(String $name, String $lastName, Category $category,$birthDate = null, String $dni = null,String $phone = null)
     {
         $this->name = $name;
         $this->lastName = $lastName;
