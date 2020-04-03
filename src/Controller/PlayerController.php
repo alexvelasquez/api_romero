@@ -82,9 +82,9 @@ class PlayerController extends FOSRestController
             $code = 200;
             $name = $request->request->get("name");
             $lastName = $request->request->get("last_name");
-            $dni = $request->request->get("dni");
-            $birthDate = new \DateTime($request->request->get("birth_date"));
-            $phone = $request->request->get("phone");
+            $dni = !empty($request->request->get("dni")) ? $request->request->get("dni") : null;
+            $birthDate = !empty($request->request->get("birth_date")) ? new \DateTime($request->request->get("birth_date")) : null;
+            $phone =  !empty($request->request->get("phone")) ? $request->request->get("phone") : null;
             $category = !empty($request->request->get("category")) ? $em->getRepository("App:Category")->findOneBy(['description'=>$request->request->get("category")]) : null;
             if (!is_null($name) && !is_null($lastName) && !is_null($category)) {
                 $player = $em->getRepository("App:Player")->find($id);
@@ -168,7 +168,7 @@ class PlayerController extends FOSRestController
            $dni = !empty($request->request->get("dni")) ? $request->request->get("dni") : null;
 
            //fecha
-           $birthDate = !empty($request->request->get("birth_date")) ? new \DateTime($request->request->get("birth_date")) : null;
+           $birthDate = !empty($request->request->get("birth_date")) ? new \DateTime($request->request->get('birth_date')) : null;
 
 
            //category and other 
@@ -198,6 +198,7 @@ class PlayerController extends FOSRestController
         ];
         return new Response($serializer->serialize($response, "json"));
     }
+
 
 
     

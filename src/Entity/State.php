@@ -29,4 +29,54 @@ class State
     private $description;
 
 
+    public function __construct()
+    {
+    }
+	/**
+	 * Get the value of stateId
+	 *
+	 * @return  int
+	 */
+	public function getStateId()
+	{
+		return $this->stateId;
+	}
+
+	/**
+	 * Set the value of stateId
+	 *
+	 * @param   int  $stateId  
+	 *
+	 * @return  self
+	 */
+	public function setStateId(int $stateId)
+	{
+		$this->stateId = $stateId;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of description
+	 *
+	 * @return  string
+	 */
+	public function getDescription()
+	{
+		return $this->description;
+	}
+
+	/**
+	 * Set the value of description
+	 *
+	 * @param   string  $description  
+	 *
+	 * @return  self
+	 */
+	public function setDescription(string $description)
+	{
+		$this->description = $description;
+
+		return $this;
+	}
 }

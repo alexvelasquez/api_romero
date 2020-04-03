@@ -69,7 +69,7 @@ class Player
 
 
 
-    public function __construct(String $name, String $lastName, Category $category,$birthDate = null, String $dni = null,String $phone = null)
+    public function __construct(String $name, String $lastName, Category $category,\DateTime $birthDate = null, String $dni = null,String $phone = null)
     {
         $this->name = $name;
         $this->lastName = $lastName;
@@ -155,7 +155,7 @@ class Player
 	/**
 	 * Get the value of dni
 	 *
-	 * @return  int
+	 * @return 
 	 */
 	public function getDni()
 	{
@@ -165,11 +165,11 @@ class Player
 	/**
 	 * Set the value of dni
 	 *
-	 * @param   int  $dni  
+	 * @param 
 	 *
 	 * @return  self
 	 */
-	public function setDni(int $dni)
+	public function setDni($dni)
 	{
 		$this->dni = $dni;
 
@@ -179,7 +179,7 @@ class Player
 	/**
 	 * Get the value of birthDate
 	 *
-	 * @return  \DateTime
+	 * @return 
 	 */
 	public function getBirthDate()
 	{
@@ -189,11 +189,11 @@ class Player
 	/**
 	 * Set the value of birthDate
 	 *
-	 * @param   \DateTime  $birthDate  
+	 * @param   $birthDate  
 	 *
 	 * @return  self
 	 */
-	public function setBirthDate(\DateTime $birthDate)
+	public function setBirthDate($birthDate)
 	{
 		$this->birthDate = $birthDate;
 
@@ -203,7 +203,7 @@ class Player
 	/**
 	 * Get the value of phone
 	 *
-	 * @return  string
+	 * @return 
 	 */
 	public function getPhone()
 	{
@@ -213,11 +213,11 @@ class Player
 	/**
 	 * Set the value of phone
 	 *
-	 * @param   string  $phone  
+	 * @param   
 	 *
 	 * @return  self
 	 */
-	public function setPhone(string $phone)
+	public function setPhone( $phone)
 	{
 		$this->phone = $phone;
 

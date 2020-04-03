@@ -28,5 +28,57 @@ class Cuota
      */
     private $date;
 
+    public function __construct(\DateTime $date)
+    {
+        $this->date = $date;
+    }
 
+
+	/**
+	 * Get the value of cuotaId
+	 *
+	 * @return  int
+	 */
+	public function getCuotaId()
+	{
+		return $this->cuotaId;
+	}
+
+	/**
+	 * Set the value of cuotaId
+	 *
+	 * @param   int  $cuotaId  
+	 *
+	 * @return  self
+	 */
+	public function setCuotaId(int $cuotaId)
+	{
+		$this->cuotaId = $cuotaId;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of date
+	 *
+	 * @return  \DateTime
+	 */
+	public function getDate()
+	{
+		return $this->date;
+	}
+
+	/**
+	 * Set the value of date
+	 *
+	 * @param   \DateTime  $date  
+	 *
+	 * @return  self
+	 */
+	public function setDate(\DateTime $date)
+	{
+		$this->date = $date;
+
+		return $this;
+	}
 }
